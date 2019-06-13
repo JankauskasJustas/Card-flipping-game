@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background: #2b5827;
+}
+/* main view of cards */
+.card-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap:  wrap;
+    perspective: 1000px;
+    
+}
+
+.card-memory.medium {
+    width:calc(25% - 10px);
+    height:calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card-memory.easy {
+    width:calc(25% - 10px);
+    height:calc(50% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card-memory.hard {
+    width:calc(16.666% - 10px);
+    height:calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.card-memory:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card-memory.flipped{
+    transform: rotateY(180deg);
+}
+
+.front-card,
+.back-card {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius:  5px;
+    background: #061402;
+    backface-visibility: hidden;
+}
+
+.front-card{
+    transform: rotateY(180deg);
+}
+
+/* prevent user from dragging and selecting */
+.front-card,
+.back-card,
+.card-memory {
+    -webkit-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* text and buttons */
+.container{
+	font-size: 20px;
+    color: #dadd17;
+    margin: 0px 0px;
+    top: 75px;
+    position: absolute;
+}
+
+.btn{
+    font-size: 30px;
+    padding: 50px 32px;
+    margin: 0px 0px;
+    position: absolute;
+    top: 265px;
+    color: #dadd17;
+    background-color: #061402;
+    border: none;
+}
+
+.ez{
+    font-size: 10px;
+    padding: 20px 15px;
+    top:550px;
+    left: 35px;
+}
+
+.med{
+    font-size: 10px;
+    padding: 20px 15px;
+    top:550px;
+    left:95px;
+}
+
+.hrd{
+    font-size: 10px;
+    padding: 20px 15px;
+    top:550px;
+    left: 170px;
+}
+
+.difficulty{
+    position: absolute;
+    color: #dadd17;
+    top: 500px;
+}
+
+h1{
+    margin: 17px 0px;
+    position: absolute;
+    color: #061402;
+}
